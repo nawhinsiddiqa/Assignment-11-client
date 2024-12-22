@@ -5,8 +5,10 @@ const Register = () => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
+        const name=form.name.value;
+        const photo=form.photo.value;
         const password = form.password.value;
-        console.log(email, password)
+        console.log(email, password,name,photo)
 
         
     }
@@ -16,7 +18,7 @@ const Register = () => {
         <div>
             
         <div>
-            <h1 className="text-3xl font-bold text-center my-7">Register now!</h1>
+            <h1 className="text-4xl font-bold text-center my-7 text-green-600">Register now!!!!</h1>
 
             <div className="hero bg-base-200 min-h-screen">
 
@@ -32,6 +34,18 @@ const Register = () => {
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
 
                         <form onSubmit={handleRegister} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="name" name="name" placeholder="Name" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" name="photo" placeholder="PhotoURL" className="input input-bordered" required />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
