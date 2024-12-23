@@ -10,10 +10,15 @@ import Login from './Component/Login.jsx'
 import Register from './Component/Register.jsx'
 import Home from './Component/Home.jsx'
 import AuthProvider from './AuthContext/AuthProvider.jsx'
+import AddFood from './Component/AddFood.jsx'
+import AvaliableFoodsPage from './Component/AvaliableFoodsPage.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import FeaturedFoods from './Component/FeaturedFoods.jsx'
+import FoodsCard from './Component/FoodsCard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -41,7 +46,26 @@ const router = createBrowserRouter([
              {
               path:'/',
               element:<Home></Home>
-             }
+              
+             },
+             {
+              path:'/foodsCard',
+              element:<FoodsCard></FoodsCard>
+             },
+             {
+              path:'/featuredFoods',
+              element:<FeaturedFoods></FeaturedFoods>
+             },
+
+             {
+              path:'/avaliableFoodsPage',
+              element:<AvaliableFoodsPage></AvaliableFoodsPage>
+             },
+
+             {
+              path:'/addFood',
+              element:<AddFood></AddFood>
+             },
 
 
   
