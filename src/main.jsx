@@ -20,6 +20,7 @@ import {
 import FeaturedFoods from './Component/FeaturedFoods.jsx'
 import FoodsCard from './Component/FoodsCard.jsx'
 import One from './Component/One.jsx'
+import SingleDetailsPage from './Component/SingleDetailsPage'
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,12 @@ const router = createBrowserRouter([
              {
               path:'/one',
               element:<One></One>
+             },
+
+             {
+              path:'/funs/:id',
+              element:<SingleDetailsPage></SingleDetailsPage>,
+              loader:({params}) =>fetch(`http://localhost:5000/funs/${params.id}`)
              },
              {
               path:'/featuredFoods',
