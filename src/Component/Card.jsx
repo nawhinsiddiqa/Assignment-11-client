@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Card = ({ food }) => {
     const { name, image, location, quantity, time, status, notes } = food
@@ -12,13 +12,13 @@ const Card = ({ food }) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title text-green-700 border p-4">{name}</h2>
-                    <h2 className="card-title">{location}</h2>
-                    <h2 className="card-title">{quantity}</h2>
-                    <h2 className="card-title">{time}</h2>
-                    <h2 className="card-title">{status}</h2>
-                    <p>I{notes}</p>
+                    <h2 className="card-title">Location:{location}</h2>
+                    <h2 className="card-title">Food Quantity:{quantity}</h2>
+                    <h2 className="card-title">Expired:{time}</h2>
+                    <h2 className="card-title">Status:{status}</h2>
+                    {/* <p>I{notes}</p> */}
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                       <Link to="/avaliableFoodsPage"> <button className="btn bg-amber-300">A Show All</button></Link>
                     </div>
                 </div>
             </div>

@@ -19,6 +19,7 @@ import {
 } from "react-router-dom";
 import FeaturedFoods from './Component/FeaturedFoods.jsx'
 import FoodsCard from './Component/FoodsCard.jsx'
+import One from './Component/One.jsx'
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
              {
               path:'/foodsCard',
               element:<FoodsCard></FoodsCard>
+             },
+
+             {
+              path:'/one',
+              element:<One></One>
              },
              {
               path:'/featuredFoods',

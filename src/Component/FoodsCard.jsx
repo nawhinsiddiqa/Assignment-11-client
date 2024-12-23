@@ -16,7 +16,7 @@ const FoodsCard = ({ food }) => {
                     <h2 className="card-title">{status}</h2>
                     <p>{notes}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary mb-6">View Details Button</button>
+                        <button className="btn bg-amber-300 mb-6">View Details Button</button>
                     </div>
                 </div>
             </div>
