@@ -54,7 +54,8 @@ const router = createBrowserRouter([
              },
              {
               path:'/featuredFoods',
-              element:<FeaturedFoods></FeaturedFoods>
+              element:<FeaturedFoods></FeaturedFoods>,
+           
              },
 
              {
