@@ -1,7 +1,9 @@
 import Lottie from "lottie-react";
+import Swal from 'sweetalert2'
 import registerLottie from "../assets/register.json";
 import AuthContext from "../AuthContext/AuthContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const handleRegister = (e) => {
@@ -12,11 +14,18 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(email, password, name, photo)
-
+        
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!passwordRegex.test(password)){
+            setErrorMessage('At least one uppercase,one lower case and length 6 character')
+            return;
+        }
 
         createUser(email, password)
             .then(result => {
+                Swal.fire("Successfully Registered")
                 console.log(result.user)
+
             })
             .catch(error => {
                 console.log(error.message)
@@ -27,7 +36,7 @@ const Register = () => {
 
 
 
-    
+
     return (
         <div>
 
@@ -79,6 +88,17 @@ const Register = () => {
                                     <button className="btn btn-primary">Register</button>
                                 </div>
                             </form>
+
+
+                            <p className="ml-4 mb-4 mr-4 font-bold">
+                                Already Have an account?please<Link to="/login"><span className="text-green-700 font-bold mr-3">Login</span></Link>
+
+                            </p>
+                            <p>
+                                <button
+                                    // onClick={handleGoogleSignIn}
+                                    className="btn bg-amber-500 w-full mx-auto text-black">Google</button>
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import auth from '../Firebase/firebase.config';
 
+
+
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
@@ -37,21 +39,21 @@ const AuthProvider = ({ children }) => {
         return () => {
             unSubscribe();
         }
-    },[])
+    }, [])
 
-        const authInfo = {
-            user,
-             loading,
-             createUser,
-             signInUser,
-             signOutUser
+    const authInfo = {
+        user,
+        loading,
+        createUser,
+        signInUser,
+        signOutUser
 
-        }
-        return (
-            <AuthContext.Provider value={authInfo}>
-                {children}
-            </AuthContext.Provider>
-        );
-    };
+    }
+    return (
+        <AuthContext.Provider value={authInfo}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
 
-    export default AuthProvider;
+export default AuthProvider;

@@ -31,17 +31,18 @@ const Navbar = () => {
                             </ul>
                         </div>
                         <a className="flex text-3xl font-bold text-rose-600">
-                            <img  className="w-12" src ="https://i.ibb.co.com/yyw6v3v/images.png"></img>
+                            <img className="w-12" src="https://i.ibb.co.com/yyw6v3v/images.png"></img>
                             <span className="mt-2 script">Food Zone</span>
                         </a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 text-purple-800 font-bold bottom-2">
-
+                            <NavLink to="/"><li><a>Home</a></li></NavLink>
+                            <NavLink to="/addFood"><li><a>Add Food</a></li></NavLink>
                             <NavLink to="/login"><li><a>Login</a></li></NavLink>
                             <NavLink to="/register"><li><a>Register</a></li></NavLink>
-                            <NavLink to="/addFood"><li><a>Add Food</a></li></NavLink>
-                            <NavLink to="/"><li><a>Home</a></li></NavLink>
+                           
+
 
 
                         </ul>
@@ -50,11 +51,11 @@ const Navbar = () => {
                         {/* {
                             user ? <> */}
 
-                                <button  className="btn text-purple-700">Sign out</button>
+                        <button className="btn text-purple-700">Sign out</button>
 
-                            {/* </> */}
+                        {/* </> */}
 
-                                {/* : <>
+                        {/* : <>
                                     <Link to="/logIn">
 
                                         <button className="btn">Login In</button>
@@ -64,7 +65,7 @@ const Navbar = () => {
 
 
 
-                                {/* </> */}
+                        {/* </> */}
                         {/* } */}
 
                     </div>
