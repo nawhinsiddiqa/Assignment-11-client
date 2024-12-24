@@ -3,9 +3,12 @@ import Swal from 'sweetalert2'
 import registerLottie from "../assets/register.json";
 import AuthContext from "../AuthContext/AuthContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, signInWithGoogle } = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -14,9 +17,9 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(email, password, name, photo)
-        
+        setErrorMessage('');
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        if (!passwordRegex.test(password)){
+        if (!passwordRegex.test(password)) {
             setErrorMessage('At least one uppercase,one lower case and length 6 character')
             return;
         }
@@ -25,15 +28,27 @@ const Register = () => {
             .then(result => {
                 Swal.fire("Successfully Registered")
                 console.log(result.user)
+                setTimeout(() => {
+                    navigate('/')
+                }, 1000)
+
 
             })
             .catch(error => {
+
+                setErrorMessage(error.message);
+                Swal.fire("At least one uppercase,one lower case and length 6 character")
                 console.log(error.message)
             })
-
-
+        
     }
-
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.log(error.message))
+    }
 
 
 
@@ -96,9 +111,12 @@ const Register = () => {
                             </p>
                             <p>
                                 <button
-                                    // onClick={handleGoogleSignIn}
+                                    onClick={handleGoogleSignIn}
                                     className="btn bg-amber-500 w-full mx-auto text-black">Google</button>
                             </p>
+                            {
+                                errorMessage && <p className="text-red-700 p-4">{errorMessage}</p>
+                            }
                         </div>
                     </div>
                 </div>

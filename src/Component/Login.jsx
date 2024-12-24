@@ -3,9 +3,10 @@ import Swal from 'sweetalert2'
 import loginBanner from '../assets/Login.json'
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-    const {signInUser} =useContext(AuthContext)
+    const { signInUser,signInWithGoogle } = useContext(AuthContext);
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -14,16 +15,28 @@ const Login = () => {
         console.log(email, password)
 
 
-        signInUser(email,password)
-        .then(result =>{
-             Swal.fire("Successfully Logged in")
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.log('ERROR',error.message)
-        })
-    }
+        signInUser(email, password)
+            .then(result => {
+                Swal.fire("Successfully Logged in")
+                console.log(result.user)
+                setTimeout(() => {
+                    navigate('/')
+                }, 1000)
 
+            })
+            .catch(error => {
+                console.log('ERROR', error.message)
+            })
+
+
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.log(error.message))
+    }
 
 
     return (
@@ -64,6 +77,16 @@ const Login = () => {
                                     <button className="btn btn-primary">Login</button>
                                 </div>
                             </form>
+                            <p className="ml-4 mb-4 mr-4 font-bold">
+                                Welcome to this website?please <Link to="/register"><span className="text-green-600">Register</span></Link>
+
+                            </p>
+                            <p>
+                                <button
+                                    onClick={handleGoogleSignIn}
+                                    className="btn bg-slate-500 w-full mx-auto text-black">Google</button>
+                            </p>
+
                         </div>
                     </div>
                 </div>
