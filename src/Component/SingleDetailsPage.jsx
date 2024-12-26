@@ -1,7 +1,10 @@
 import { useLoaderData } from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 const SingleDetailsPage = () => {
+    const handleUpdate=()=>{
+            Swal.fire("Update form are here")
+        }
     const { name, image, location, quantity, time, status, notes ,_id} = useLoaderData();
 
     return (
@@ -21,7 +24,12 @@ const SingleDetailsPage = () => {
                         <span className="font-bold"><p>Status:{status}</p></span>
                         <span className="font-bold"><p>Notes:{notes}</p></span>
                         <div className="card-actions justify-end">
+                            
+                            
+                            <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
+                            
                             <button className="btn bg-yellow-200">Request Button</button>
+                            <button className="btn bg-red-600">Delete Button</button>
                         </div>
                     </div>
                 </div>

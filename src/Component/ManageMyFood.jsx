@@ -1,50 +1,53 @@
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
 
-const AddFood = () => {
-   
-    const navigate=useNavigate();
-  const handleFoodCook=(e)=>{
-    e.preventDefault();
-    const form= e.target;
-    const name=form.name.value;
-    const image =form.image.value;
-    const location =form.location.value;
-    const quantity=form.quantity.value;
-    const time =form.time.value;
-    const status =form.status.value;
-    const notes = form.notes.value;
-    const newFood ={name,image,location,quantity,time,status,notes}
-    console.log(newFood)
+import { Link } from "react-router-dom";
 
 
-    // send data to the server
-    fetch('http://localhost:5000/funs',{
-        method:'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(newFood)
-    })
-    .then(res =>res.json())
-    .then(data =>{
-        console.log(data);
-        if(data.insertedId){
-            Swal.fire({
-                title: 'success!',
-                text: 'User added successfully',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-              })
-            navigate('/avaliableFoodsPage')
-        }
-    })
 
-  }
+
+const ManageMyFood = () => {
+
+    const handleFoodCook=(e)=>{
+        e.preventDefault();
+        const form= e.target;
+        const name=form.name.value;
+        const image =form.image.value;
+        const location =form.location.value;
+        const quantity=form.quantity.value;
+        const time =form.time.value;
+        const status =form.status.value;
+        const notes = form.notes.value;
+        const newFood ={_id,name,image,location,quantity,time,status,notes}
+        console.log(newFood)
     
+    
+        // send data to the server
+        fetch('http://localhost:5000/funs',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newFood)
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'success!',
+                    text: 'User added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+                navigate('/avaliableFoodsPage')
+            }
+        })
+    
+      }
+        
     return (
         <div>
-            <h2 className="text-4xl  script font-bold text-center my-6 text-orange-700">Add Food Form</h2>
+            <div>
+            <h2 className="text-4xl  script font-bold text-center my-6 text-orange-700">Manage My Food Form</h2>
             <form  onSubmit={handleFoodCook}className="card-body w-10/12 mx-auto border bg-orange-200">
                 {/* Food Name */}
                 <div className="form-control">
@@ -109,8 +112,9 @@ const AddFood = () => {
 
                 </div>
 
-                <div className="form-control mt-6">
-                    <button className="btn bg-yellow-200">Add Button</button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 form-control mt-6 w-[400px] mx-auto">
+                    {/* <Link to={`updateAction${_id}`}><button className="btn bg-green-600">Update Button</button></Link> */}
+                    <button className="btn bg-red-600">Delete Button</button>
                 </div>
                <div className="border b-2 my-8"></div>
                 <div>
@@ -144,8 +148,13 @@ const AddFood = () => {
                 </div>
             </form >
 
-        </div >
+        </div > 
+        </div>
     );
 };
 
-export default AddFood;
+export default ManageMyFood;
+
+
+   
+        

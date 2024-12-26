@@ -5,7 +5,7 @@ const One = () => {
         <div>
             <h2 className="text-4xl text-center text-amber-600 script my-3">Traditional Best Food</h2>
             <p className="text-center my-5">Traditional foods are foods and dishes that are passed on through generations <br></br>or which have been consumed for many generations. Traditional foods and dishes are traditional <br></br>in nature, and may have a historic precedent in a national dish, regional cuisine or local cuisine. </p>
-            <div className="grid grid-cols-1 lg:grid-cols-3 w-9/12 mx-auto p-9 bg-gradient-to-r from-orange-700 to-red-700 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-9/12 mx-auto p-9 bg-gradient-to-r from-orange-700 to-red-700 mb-4">
                 <img className="mb-7 " src="https://i.ibb.co.com/bb8V8mS/images-2.jpg"></img>
                 <img className="" src="https://i.ibb.co.com/kqsTK9r/images-3.jpg"></img>
                 <img src="https://i.ibb.co.com/KhRyfc1/download-14.jpg"></img>

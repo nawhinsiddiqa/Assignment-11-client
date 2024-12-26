@@ -3,10 +3,11 @@ import Swal from 'sweetalert2'
 import loginBanner from '../assets/Login.json'
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const { signInUser,signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;

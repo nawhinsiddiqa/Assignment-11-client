@@ -36,11 +36,14 @@ const Navbar = () => {
                         </a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 text-purple-800 font-bold bottom-2">
-                            <NavLink to="/"><li><a>Home</a></li></NavLink>
-                            <NavLink to="/addFood"><li><a>Add Food</a></li></NavLink>
-                            <NavLink to="/login"><li><a>Login</a></li></NavLink>
-                            <NavLink to="/register"><li><a>Register</a></li></NavLink>
+                        <ul className="menu menu-horizontal px-1 text-purple-800 gap-4 font-bold bottom-2">
+                            <NavLink to="/"><li>Home</li></NavLink>
+                            <NavLink to="/addFood"><li>Add Food</li></NavLink>
+                            <NavLink to="/avaliableFoodsPage"><li>AvaliableFoodsPage</li></NavLink>
+                            <NavLink to="/manageMyFood/id"><li>ManageMyFood</li></NavLink>
+                            <NavLink to="/myFoodRequest"><li>MyFoodRequest</li></NavLink>
+                            <NavLink to="/login"><li>Login</li></NavLink>
+                            <NavLink to="/register"><li>Register</li></NavLink>
                            
 
 
