@@ -1,6 +1,11 @@
-
-
+import { useLoaderData } from "react-router-dom";
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 const UpdateAction = () => {
+    const navigate =useNavigate();
+    const{ name, image, location, quantity, time, status, notes ,_id}=useLoaderData();
+           
+    
     const handleFoodCook=(e)=>{
         e.preventDefault();
         const form= e.target;
@@ -11,34 +16,37 @@ const UpdateAction = () => {
         const time =form.time.value;
         const status =form.status.value;
         const notes = form.notes.value;
-        const newFood ={_id,name,image,location,quantity,time,status,notes}
-        console.log(newFood)
+        const updatedFood ={name,image,location,quantity,time,status,notes}
+        console.log(updatedFood)
          // send data to the server
-         fetch('http://localhost:5000/funs',{
-            method:'POST',
+         fetch(`http://localhost:5000/funs/${_id}`,{
+            method:'PUT',
             headers:{
                 'content-type':'application/json'
             },
-            body:JSON.stringify(newFood)
+            body:JSON.stringify(updatedFood)
         })
         .then(res =>res.json())
         .then(data =>{
             console.log(data);
-            if(data.insertedId){
+            if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'success!',
-                    text: 'User added successfully',
+                    text: 'Food Updated successfully',
                     icon: 'success',
                     confirmButtonText: 'Ok'
                   })
-                navigate('/avaliableFoodsPage')
+                  navigate('/')
             }
         })
-    
+       
       }
+
+    
     return (
         <div>
             <div>
+                <h2>{name}</h2>
                 <div>
                     <h2 className="text-4xl  script font-bold text-center my-6 text-orange-700">Manage My Food Form</h2>
                     <form onSubmit={handleFoodCook} className="card-body w-10/12 mx-auto border bg-orange-200">
@@ -47,14 +55,14 @@ const UpdateAction = () => {
                             <label className="label">
                                 <span className="label-text text-xl font-bold text-lime-500">Food Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Food Name" className="input input-bordered" required />
+                            <input type="text" name="name" defaultValue={name}  placeholder="Food Name" className="input input-bordered" required />
                         </div>
                         {/* Food image */}
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-tex text-xl font-bold text-lime-500">Food Image</span>
                             </label>
-                            <input type="text" name="image" placeholder="Food Image" className="input input-bordered" required />
+                            <input type="text" name="image" defaultValue={image}  placeholder="Food Image" className="input input-bordered" required />
 
                         </div>
                         {/* Food Location */}
@@ -62,14 +70,14 @@ const UpdateAction = () => {
                             <label className="label">
                                 <span className="label-tex text-xl font-bold text-lime-500">Food Location</span>
                             </label>
-                            <input type="text" name="location" placeholder="Food Location" className="input input-bordered" required />
+                            <input type="text" name="location" defaultValue={location}  placeholder="Food Location" className="input input-bordered" required />
 
                         </div>
                         {/* Food Quantity */}
                         <label className="label">
                             <span className="label-text text-xl font-bold text-lime-500">Food Quantity</span>
                         </label>
-                        <select name="quantity" className="select select-bordered w-full my-6">
+                        <select name="quantity" defaultValue={quantity} className="select select-bordered w-full my-6">
                             <option disabled selected>Food Quantity do you like?</option>
                             <option>Excellent</option>
                             <option>Good</option>
@@ -81,7 +89,7 @@ const UpdateAction = () => {
                             <label className="label">
                                 <span className="label-tex text-xl font-bold text-lime-500">Expire Time & Date</span>
                             </label>
-                            <input type="number" name="time" placeholder="Expired Time" className="input input-bordered" required />
+                            <input type="number" name="time" defaultValue={time}  placeholder="Expired Time" className="input input-bordered" required />
 
                         </div>
 
@@ -89,7 +97,7 @@ const UpdateAction = () => {
                         <label className="label">
                             <span className="label-text text-xl font-bold text-lime-500">Food Status</span>
                         </label>
-                        <select name="status" className="select select-bordered w-full my-6">
+                        <select name="status" defaultValue={status}  className="select select-bordered w-full my-6">
                             <option disabled selected>Food Status</option>
                             <option>Avaliable</option>
 
@@ -101,7 +109,7 @@ const UpdateAction = () => {
                             <label className="label">
                                 <span className="label-text text-xl font-bold text-lime-500 mx-auto ">Additional Notes</span>
                             </label>
-                            <input type="text" name="notes" placeholder="Additional Notes" className="input input-bordered w-[640px] h-[200px] mx-auto" required />
+                            <input type="text" name="notes" defaultValue={notes} placeholder="Additional Notes" className="input input-bordered w-[640px] h-[200px] mx-auto" required />
 
                         </div>
 
