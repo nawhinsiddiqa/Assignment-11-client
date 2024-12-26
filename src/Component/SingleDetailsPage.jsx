@@ -4,41 +4,10 @@ import Swal from 'sweetalert2'
 const SingleDetailsPage = () => {
 
     const handleRequest = () => {
-        <form class="card-body">
-            <div class="form-control">
-                <label class="label">
-                    <span class="label-text">Email</span>
-                </label>
-                <input type="email" placeholder="email" class="input input-bordered" required />
-            </div>
-            <div class="form-control">
-                <label class="label">
-                    <span class="label-text">Password</span>
-                </label>
-                <input type="password" placeholder="password" class="input input-bordered" required />
-                <label class="label">
-                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                </label>
-            </div>
-            <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
-            </div>
-        </form>
+        document.getElementById('my_modal_1').showModal()
 
         {/* Open the modal using document.getElementById('ID').showModal() method */ }
 
-        <dialog id="handleRequest" className="modal">
-            <div className="modal-box">
-                <h3 className="font-bold text-lg">Hello!</h3>
-                <p className="py-4">Press ESC key or click the button below to close</p>
-                <div className="modal-action">
-                    <form method="dialog">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </form>
-                </div>
-            </div>
-        </dialog>
 
 
 
@@ -99,18 +68,88 @@ const SingleDetailsPage = () => {
                         <span className="font-bold"> <p>Expired:{time}</p></span>
                         <span className="font-bold"><p>Status:{status}</p></span>
                         <span className="font-bold"><p>Notes:{notes}</p></span>
-                        <div className="card-actions justify-end">
+
+                        <dialog Id="my_modal_1" className="modal">
+
+                            <div className="modal-box">
+                                <h3 className="font-bold text-lg">Fill Up Following Input Field</h3>
+
+                                <div className="modal-action">
+                                    <form method="dialog">
+                                        <form className="card-body">
+                                            <div className="form-control mx-auto">
+                                                <label className="label">
+                                                    <span className="label-text">Food Name</span>
+                                                </label>
+                                                <input type="text" placeholder="FoodName" className="input input-bordered" required />
+                                            </div>
+                                            <div className="form-control">
+                                                <label className="label">
+                                                    <span className="label-text">FoodImage</span>
+                                                </label>
+                                                <input type="text" placeholder="FoodImage" className="input input-bordered" required />
+
+                                            </div>
+                                            <div className="form-control mx-auto">
+                                                <label className="label">
+                                                    <span className="label-text">FoodId</span>
+                                                </label>
+                                                <input type="text" placeholder="FoodId" className="input input-bordered" required />
+                                            </div>
+                                            <div className="form-control mx-auto">
+                                                <label className="label">
+                                                    <span className="label-text">FoodDonatorName</span>
+                                                </label>
+                                                <input type="text" placeholder="FoodDonatorName" className="input input-bordered" required />
+                                            </div>
+                                            <div className="form-control mx-auto">
+                                                <label className="label">
+                                                    <span className="label-text">FoodDonatorEmail</span>
+                                                </label>
+                                                <input type="email" placeholder="FoodName" className="input input-bordered" required />
+                                            </div>
+                                            <label className="label">
+                                                <span className="label-text text-xl font-bold ">Food Status</span>
+                                            </label>
+                                            <select name="status" className="select select-bordered w-full my-6">
+                                                <option disabled selected>Food Status</option>
+                                                <option>Requested</option>
 
 
-                            <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
-
-                            <button onClick={() => handleRequest()} className="btn bg-yellow-200">Request Button</button>
-                            <button onClick={() => handleDelete(_id)} className="btn bg-red-600">Delete Button</button>
-                        </div>
+                                            </select>
+                                            <div className="form-control mx-auto">
+                                                <label className="label">
+                                                    <span className="label-text">Notes</span>
+                                                </label>
+                                                <input type="text" placeholder="Notes" className="input input-bordered" required />
+                                            </div>
+                                           
+                                        <div className="form-control mt-6">
+                                            <button className="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                    {/* if there is a button in form, it will close the modal */}
+                                    <button className="btn">Close</button>
+                                </form>
+                            </div>
                     </div>
+
+
+
+                </dialog>
+
+                <div className="card-actions justify-end">
+
+
+                    <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
+
+                    <button onClick={() => handleRequest()} className="btn bg-yellow-200">Request Button</button>
+                    <button onClick={() => handleDelete(_id)} className="btn bg-red-600">Delete Button</button>
                 </div>
             </div>
         </div>
+            </div >
+        </div >
     );
 };
 
