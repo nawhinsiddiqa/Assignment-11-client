@@ -25,6 +25,7 @@ import SingleDetailsPage from './Component/SingleDetailsPage'
 import ManageMyFood from './Component/ManageMyFood.jsx'
 import UpdateAction from './Component/UpdateAction.jsx'
 import Next from './Component/Next.jsx'
+import PrivateRoute from './Component/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
       {
 
         path: '/myFoodRequest',
-        element: <MyFoodRequest></MyFoodRequest>
+        elemen:<PrivateRoute>: <MyFoodRequest></MyFoodRequest></PrivateRoute>
       },
       {
         path: '/updateAction/:id',
@@ -83,7 +84,7 @@ const router = createBrowserRouter([
 
       {
         path: '/funs/:id',
-        element: <SingleDetailsPage></SingleDetailsPage>,
+        element: <PrivateRoute> <SingleDetailsPage></SingleDetailsPage></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/funs/${params.id}`)
       },
       {
@@ -95,15 +96,15 @@ const router = createBrowserRouter([
       {
         path: '/avaliableFoodsPage',
         element: <AvaliableFoodsPage></AvaliableFoodsPage>
-      },
+      }, 
       {
-        path: '/manageMyFood/:id',
+        path: '/manageMyFood',
         element: <ManageMyFood></ManageMyFood>
 
       },
       {
         path: '/addFood',
-        element: <AddFood></AddFood>
+        element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
       },
 
 

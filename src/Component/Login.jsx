@@ -4,7 +4,7 @@ import loginBanner from '../assets/Login.json'
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-
+import axios from "axios";
 const Login = () => {
     const { signInUser,signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -19,10 +19,17 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 Swal.fire("Successfully Logged in")
-                console.log(result.user)
-                setTimeout(() => {
-                    navigate('/')
-                }, 1000)
+                console.log(result.user.email)
+                const user = {email:result.user.email}
+                axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+                .then(res =>{
+                    console.log(res.data)
+                })
+                     
+                
+                // setTimeout(() => {
+                //     // navigate('/')
+                // }, 1000)
 
             })
             .catch(error => {

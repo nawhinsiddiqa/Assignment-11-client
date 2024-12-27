@@ -14,42 +14,9 @@ const SingleDetailsPage = () => {
 
     }
 
-    const handleDelete = _id => {
-        console.log(_id);
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-
-                fetch(`http://localhost:5000/funs/${_id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your food has been deleted.",
-                                icon: "success"
-                            });
-                        }
-                    })
-
-
-            }
-        });
-    }
-    const handleUpdate = () => {
-        Swal.fire("Update form are here")
-    }
+  
+  
+    
     const { name, image, location, quantity, time, status, notes, _id } = useLoaderData();
 
     return (
@@ -117,15 +84,9 @@ const SingleDetailsPage = () => {
 
 
                                             </select>
-                                            <div className="form-control mx-auto">
-                                                <label className="label">
-                                                    <span className="label-text">Notes</span>
-                                                </label>
-                                                <input type="text" defaultValue={notes}placeholder="Notes" className="input input-bordered" required />
-                                            </div>
-
+                                            <textarea className="textarea textarea-ghost" placeholder="Notes"></textarea>
                                             <div className="form-control mt-6">
-                                                <button className="btn btn-primary">Submit</button>
+                                                <button className="btn btn-primary">Submit Here</button>
                                             </div>
                                         </form>
                                         {/* if there is a button in form, it will close the modal */}
@@ -141,10 +102,10 @@ const SingleDetailsPage = () => {
                         <div className="card-actions justify-end">
 
 
-                            <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
+                           
 
                             <button onClick={() => handleRequest()} className="btn bg-yellow-200">Request Button</button>
-                            <button onClick={() => handleDelete(_id)} className="btn bg-red-600">Delete Button</button>
+                            
                         </div>
                     </div>
                 </div>

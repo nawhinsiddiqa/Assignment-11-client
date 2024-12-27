@@ -1,6 +1,20 @@
 import { NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import Swal from 'sweetalert2'
+import AuthContext from "../AuthContext/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Navbar = () => {
+    const { user, signOutUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                Swal.fire('User Sign Out Successfully')
+                navigate('/login')
+            })
+            .catch(error => console.log('ERROR', error.message))
+    }
     return (
         <div>
             <div>
@@ -38,38 +52,41 @@ const Navbar = () => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 text-purple-800 gap-4 font-bold bottom-2">
                             <NavLink to="/"><li>Home</li></NavLink>
-                            <NavLink to="/addFood"><li>Add Food</li></NavLink>
                             <NavLink to="/avaliableFoodsPage"><li>AvaliableFoodsPage</li></NavLink>
-                          
-                            <NavLink to="/myFoodRequest"><li>MyFoodRequest</li></NavLink>
+
+
+                            {
+                                user && <>
+
+                                    <NavLink to="/addFood"><li>Add Food</li></NavLink>
+
+                                    <NavLink to="/myFoodRequest"><li>MyFoodRequest</li></NavLink>
+
+                                    <NavLink to="/manageMyFood"><li>ManageMyFood</li></NavLink>
+                                </>
+                            }
+
                             <NavLink to="/login"><li>Login</li></NavLink>
                             <NavLink to="/register"><li>Register</li></NavLink>
-                           
+
 
 
 
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        {/* {
-                            user ? <> */}
-
-                        <button className="btn text-purple-700">Sign out</button>
-
-                        {/* </> */}
-
-                        {/* : <>
-                                    <Link to="/logIn">
-
-                                        <button className="btn">Login In</button>
+                        {
+                            user ? <>
+                                <span>{user.email}</span>
+                                <a onClick={handleSignOut} className='btn'>Sign Out</a>
+                            </>
+                                :
+                                <Link to="/login">Login</Link>
+                        }
 
 
-                                    </Link> */}
+                        
 
-
-
-                        {/* </> */}
-                        {/* } */}
 
                     </div>
                 </div>

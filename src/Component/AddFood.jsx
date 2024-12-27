@@ -8,6 +8,8 @@ const AddFood = () => {
     e.preventDefault();
     const form= e.target;
     const name=form.name.value;
+  
+   
     const image =form.image.value;
     const location =form.location.value;
     const quantity=form.quantity.value;
@@ -115,25 +117,25 @@ const AddFood = () => {
                <div className="border b-2 my-8"></div>
                 <div>
                     <h2 className="text-center font-bold my-2 text-3xl">Donator logged in user</h2>
-                    <form className="card-body">
+                    <form  onSubmit={handleFoodCook} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
+                            <input type="text" name="dname" placeholder="DonatorName" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Image</span>
                             </label>
-                            <input type="text" placeholder="Image" className="input input-bordered" required />
+                            <input type="text" name="image" placeholder="Image" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="Email" className="input input-bordered" required />
+                            <input type="email"  name="email"placeholder="Email" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control mt-6">
