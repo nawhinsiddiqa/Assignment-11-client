@@ -24,6 +24,7 @@ import One from './Component/One.jsx'
 import SingleDetailsPage from './Component/SingleDetailsPage'
 import ManageMyFood from './Component/ManageMyFood.jsx'
 import UpdateAction from './Component/UpdateAction.jsx'
+import Next from './Component/Next.jsx'
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,12 @@ const router = createBrowserRouter([
       {
         path: '/one',
         element: <One></One>
+      },
+
+      {
+
+        path:'/next',
+        element:<Next></Next>
       },
 
       {

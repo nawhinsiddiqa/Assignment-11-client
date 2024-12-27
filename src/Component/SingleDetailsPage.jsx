@@ -72,7 +72,7 @@ const SingleDetailsPage = () => {
                         <dialog Id="my_modal_1" className="modal">
 
                             <div className="modal-box">
-                                <h3 className="font-bold text-lg">Fill Up Following Input Field</h3>
+                                <h3 className="font-bold text-lg"> Following Input Field</h3>
 
                                 <div className="modal-action">
                                     <form method="dialog">
@@ -81,37 +81,37 @@ const SingleDetailsPage = () => {
                                                 <label className="label">
                                                     <span className="label-text">Food Name</span>
                                                 </label>
-                                                <input type="text" placeholder="FoodName" className="input input-bordered" required />
+                                                <input type="text" defaultValue={name}placeholder="FoodName" className="input input-bordered" required />
                                             </div>
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">FoodImage</span>
                                                 </label>
-                                                <input type="text" placeholder="FoodImage" className="input input-bordered" required />
+                                                <input type="text"  defaultValue={image}placeholder="FoodImage" className="input input-bordered" required />
 
                                             </div>
                                             <div className="form-control mx-auto">
                                                 <label className="label">
                                                     <span className="label-text">FoodId</span>
                                                 </label>
-                                                <input type="text" placeholder="FoodId" className="input input-bordered" required />
+                                                <input type="text" defaultValue={_id}placeholder="FoodId" className="input input-bordered" required />
                                             </div>
                                             <div className="form-control mx-auto">
                                                 <label className="label">
                                                     <span className="label-text">FoodDonatorName</span>
                                                 </label>
-                                                <input type="text" placeholder="FoodDonatorName" className="input input-bordered" required />
+                                                <input type="text"  defaultValue={name}placeholder="FoodDonatorName" className="input input-bordered" required />
                                             </div>
                                             <div className="form-control mx-auto">
                                                 <label className="label">
                                                     <span className="label-text">FoodDonatorEmail</span>
                                                 </label>
-                                                <input type="email" placeholder="FoodName" className="input input-bordered" required />
+                                                <input type="email"placeholder="FoodDonatorEmail" className="input input-bordered" required />
                                             </div>
                                             <label className="label">
                                                 <span className="label-text text-xl font-bold ">Food Status</span>
                                             </label>
-                                            <select name="status" className="select select-bordered w-full my-6">
+                                            <select name="status"  defaultValue={status} className="select select-bordered w-full my-6">
                                                 <option disabled selected>Food Status</option>
                                                 <option>Requested</option>
 
@@ -121,33 +121,33 @@ const SingleDetailsPage = () => {
                                                 <label className="label">
                                                     <span className="label-text">Notes</span>
                                                 </label>
-                                                <input type="text" placeholder="Notes" className="input input-bordered" required />
+                                                <input type="text" defaultValue={notes}placeholder="Notes" className="input input-bordered" required />
                                             </div>
-                                           
-                                        <div className="form-control mt-6">
-                                            <button className="btn btn-primary">Submit</button>
-                                        </div>
+
+                                            <div className="form-control mt-6">
+                                                <button className="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                        {/* if there is a button in form, it will close the modal */}
+                                        <button className="btn">Close</button>
                                     </form>
-                                    {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn">Close</button>
-                                </form>
+                                </div>
                             </div>
+
+
+
+                        </dialog>
+
+                        <div className="card-actions justify-end">
+
+
+                            <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
+
+                            <button onClick={() => handleRequest()} className="btn bg-yellow-200">Request Button</button>
+                            <button onClick={() => handleDelete(_id)} className="btn bg-red-600">Delete Button</button>
+                        </div>
                     </div>
-
-
-
-                </dialog>
-
-                <div className="card-actions justify-end">
-
-
-                    <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
-
-                    <button onClick={() => handleRequest()} className="btn bg-yellow-200">Request Button</button>
-                    <button onClick={() => handleDelete(_id)} className="btn bg-red-600">Delete Button</button>
                 </div>
-            </div>
-        </div>
             </div >
         </div >
     );
