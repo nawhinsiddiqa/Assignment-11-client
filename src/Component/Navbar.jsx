@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import AuthContext from "../AuthContext/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react"
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -18,7 +19,15 @@ const Navbar = () => {
     return (
         <div>
             <div>
-                <div className="navbar bg-gradient-to-r from-purple-500 to-rose-600">
+            <motion.div
+                 className="navbar bg-gradient-to-r from-purple-500 to-rose-600"  
+
+         
+         animate={{ x: 100 }}
+         transition={{
+             duration: 2, delay: 1, ease: "easeOut",
+             repeat: Infinity
+         }}>
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -89,7 +98,7 @@ const Navbar = () => {
 
 
                     </div>
-                </div>
+                </motion.div>
 
             </div>
 

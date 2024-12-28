@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-
 import Card from "./Card";
 const FeaturedFoods = () => {
 
@@ -10,8 +9,7 @@ const FeaturedFoods = () => {
       .then(res => res.json())
       .then(data => setFoods(data.slice(0, 6)))
   }, [])
-
-  return (
+   return (
     <div>
       <h2 className="text-4xl text-center text-amber-600 script my-3"> Featured  Data Are Here:{foods.length}</h2>
       <p className="text-center my-5">We take into account five universal criteria: the quality of the ingredients, the harmony of flavours, the mastery of techniques,<br></br> the personality of the chef as expressed through their cuisine and, just as importantly, consistency both across the entire menu and over time</p>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import FoodsCard from "./FoodsCard";
-
+import axios from "axios";
 const AvaliableFoodsPage = () => {
       const[foods,setFoods] =useState([]);
 
@@ -9,7 +9,7 @@ const AvaliableFoodsPage = () => {
          .then(res =>res.json())
          .then(data =>setFoods(data))
       },[])
-
+     
     return (
         <div>
             <h2 className="text-center my-5 text-3xl text-slate-600 font-bold script">All Delecious Foods Are Avaliable Here</h2>
