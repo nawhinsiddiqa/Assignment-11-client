@@ -19,15 +19,15 @@ const Navbar = () => {
     return (
         <div>
             <div>
-            <motion.div
-                 className="navbar bg-gradient-to-r from-purple-500 to-rose-600"  
+                <motion.div
+                    className="navbar bg-gradient-to-r from-purple-500 to-rose-600"
 
-         
-         animate={{ x: 100 }}
-         transition={{
-             duration: 2, delay: 1, ease: "easeOut",
-             repeat: Infinity
-         }}>
+
+                    animate={{ x: 100 }}
+                    transition={{
+                        duration: 2, delay: 1, ease: "easeOut",
+                        repeat: Infinity
+                    }}>
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,6 +50,11 @@ const Navbar = () => {
 
                                 <NavLink to="/login"><li><a>Login</a></li></NavLink>
                                 <NavLink to="/register"><li><a>Register</a></li></NavLink>
+                                <NavLink to="/addFood"><li>Add Food</li></NavLink>
+
+                                <NavLink to="/myFoodRequest"><li>MyFoodRequest</li></NavLink>
+
+                                <NavLink to="/manageMyFood"><li>ManageMyFood</li></NavLink>
 
                             </ul>
                         </div>
@@ -94,7 +99,7 @@ const Navbar = () => {
                         }
 
 
-                        
+
 
 
                     </div>

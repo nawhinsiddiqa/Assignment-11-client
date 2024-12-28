@@ -14,3 +14,5 @@ That being said, before you start submitting your recipes to a food sharing site
 ## Techonology used 
 
    Framer motion
+  surge deploy- 
+     lame-pancake.surge.sh
