@@ -7,3 +7,10 @@
 One quick note before we dive in — over the years, many food sharing sites have come and gone. These days, many social media platforms (like Pinterest) perform similar functions to the food sharing sites of yesteryear.
 
 That being said, before you start submitting your recipes to a food sharing site, it’s important to check when the most recent posts on the site are dated. If there aren’t any recipes posted within the last month or so, don’t waste your time!
+
+
+
+
+## Techonology used 
+
+   Framer motion
