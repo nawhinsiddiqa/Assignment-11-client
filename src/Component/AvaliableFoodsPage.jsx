@@ -5,7 +5,7 @@ const AvaliableFoodsPage = () => {
       const[foods,setFoods] =useState([]);
 
       useEffect(()=>{
-         fetch('http://localhost:5000/funs')
+         fetch('https://assignment-11-server-blond-omega.vercel.app/funs')
          .then(res =>res.json())
          .then(data =>setFoods(data))
       },[])

@@ -15,4 +15,4 @@ That being said, before you start submitting your recipes to a food sharing site
 
    Framer motion
   surge deploy- 
-     lame-pancake.surge.sh
+     https://dusty-regret.surge.sh

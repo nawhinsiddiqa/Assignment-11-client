@@ -21,7 +21,7 @@ const ShowCard = ({ food }) => {
                     if (result.isConfirmed) {
         
         
-                        fetch(`http://localhost:5000/funs/${_id}`, {
+                        fetch(`https://assignment-11-server-blond-omega.vercel.app/funs/${_id}`, {
                             method: 'DELETE'
                         })
                             .then(res => res.json())

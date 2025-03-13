@@ -21,7 +21,7 @@ const AddFood = () => {
 
 
     // send data to the server
-    fetch('http://localhost:5000/funs',{
+    fetch('https://assignment-11-server-blond-omega.vercel.app/funs',{
         method:'POST',
         headers:{
             'content-type':'application/json'

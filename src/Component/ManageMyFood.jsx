@@ -9,7 +9,7 @@ const ManageMyFood = () => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/funs`, { withCredentials: true })
+    axios.get(`https://assignment-11-server-blond-omega.vercel.app/funs`, { withCredentials: true })
     .then(res => setFoods(res.data))
 
   }, [])   

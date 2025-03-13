@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import Swal from 'sweetalert2'
-import loginBanner from '../assets/Login.json'
+// import loginBanner from '../assets/Login.json'
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -21,7 +21,7 @@ const Login = () => {
                 Swal.fire("Successfully Logged in")
                 console.log(result.user.email)
                 const user = {email:result.user.email}
-                axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+                axios.post('https://assignment-11-server-blond-omega.vercel.app/jwt',user,{withCredentials:true})
                 .then(res =>{
                     console.log(res.data)
                 })
@@ -59,8 +59,8 @@ const Login = () => {
                         <div className=" ml-8 mt-4 text-center lg:text-left w-[400px]">
 
 
-                            <Lottie animationData={loginBanner}
-                            ></Lottie>
+                            {/* <Lottie animationData={loginBanner}
+                            ></Lottie> */}
 
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

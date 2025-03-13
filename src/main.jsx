@@ -64,12 +64,12 @@ const router = createBrowserRouter([
       {
 
         path: '/myFoodRequest',
-        elemen:<PrivateRoute>: <MyFoodRequest></MyFoodRequest></PrivateRoute>
+        elemen: <PrivateRoute>: <MyFoodRequest></MyFoodRequest></PrivateRoute>
       },
       {
         path: '/updateAction/:id',
         element: <UpdateAction></UpdateAction>,
-        loader: ({ params }) => fetch(`http://localhost:5000/funs/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-blond-omega.vercel.app/funs/${params.id}`)
       },
       {
         path: '/one',
@@ -78,14 +78,14 @@ const router = createBrowserRouter([
 
       {
 
-        path:'/next',
-        element:<Next></Next>
+        path: '/next',
+        element: <Next></Next>
       },
 
       {
         path: '/funs/:id',
         element: <PrivateRoute> <SingleDetailsPage></SingleDetailsPage></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/funs/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-blond-omega.vercel.app/funs/${params.id}`)
       },
       {
         path: '/featuredFoods',
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
       {
         path: '/avaliableFoodsPage',
         element: <AvaliableFoodsPage></AvaliableFoodsPage>
-      }, 
+      },
       {
         path: '/manageMyFood',
         element: <ManageMyFood></ManageMyFood>

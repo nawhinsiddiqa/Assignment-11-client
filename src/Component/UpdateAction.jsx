@@ -19,7 +19,7 @@ const UpdateAction = () => {
         const updatedFood ={name,image,location,quantity,time,status,notes}
         console.log(updatedFood)
          // send data to the server
-         fetch(`http://localhost:5000/funs/${_id}`,{
+         fetch(`https://assignment-11-server-blond-omega.vercel.app/funs/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
