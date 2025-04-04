@@ -3,9 +3,9 @@
 const Next = () => {
     return (
         <div>
-            <h2 className="text-3xl font-bold script text-amber-400 text-center my-6">Spceial combo offer </h2>
+            <h2 className="text-5xl font-bold script text-rose-500 text-center my-6">Spceial combo offer </h2>
             <div>
-           <p className="text-center text-zinc-800">Combo offers are the special offers on selected merchandise that provide you the best deal on meeting the combo conditions.
+           <p className=" text-zinc-800 w-8/12 mx-auto">Combo offers are the special offers on selected merchandise that provide you the best deal on meeting the combo conditions.
            Combo' is a word which is used instead of combination. So when an offer comes in combination with some other thing it is called a combo offer. Previously, some Telecom players sold phone calls with mobile data in combo offers. Many eateries sold sandwich or other snacks with cold drinks in combo offer. 
            </p>
                       
