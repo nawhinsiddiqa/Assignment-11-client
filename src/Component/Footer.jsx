@@ -3,7 +3,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer bg-purple-600 text-base-content p-10">
+            <footer className="footer bg-gradient-to-r from-purple-500 to-rose-600 text-base-content p-10">
                 <a className="flex text-3xl font-bold text-rose-600">
                     <img className="w-12" src="https://i.ibb.co.com/yyw6v3v/images.png"></img>
                     <span className="mt-2 script">Food Zone</span>

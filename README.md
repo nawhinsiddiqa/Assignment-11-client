@@ -14,5 +14,7 @@ That being said, before you start submitting your recipes to a food sharing site
 ## Techonology used 
 
    Framer motion
-  surge deploy- 
-     https://dusty-regret.surge.sh
+  surge deploy- https://lame-pancake.surge.sh
+  newLIveSite-plucky-competition.surge.sh
+  netlify -https://leafy-eclair-7a1f69.netlify.app/
+     
