@@ -15,7 +15,7 @@ const Banner = () => {
                         <p className="mb-5">
                           
                         </p>
-                        <button className="btn btn-primary">Let's see</button>
+                        <button className="btn bg-gradient-to-r from-purple-500 to-rose-600">Let's see</button>
                     </div>
                 </div>
             </div>

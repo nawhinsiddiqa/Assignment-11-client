@@ -23,7 +23,7 @@ const Navbar = () => {
                     className="navbar bg-gradient-to-r from-purple-500 to-rose-600"
 
 
-                    animate={{ x: 100 }}
+                    animate={{ x: 30 }}
                     transition={{
                         duration: 2, delay: 1, ease: "easeOut",
                         repeat: Infinity
@@ -52,7 +52,7 @@ const Navbar = () => {
                                 <NavLink to="/register"><li><a>Register</a></li></NavLink>
                                 <NavLink to="/addFood"><li>Add Food</li></NavLink>
 
-                                <NavLink to="/myFoodRequest"><li>MyFoodRequest</li></NavLink>
+                               
 
                                 <NavLink to="/manageMyFood"><li>ManageMyFood</li></NavLink>
 
@@ -74,7 +74,7 @@ const Navbar = () => {
 
                                     <NavLink to="/addFood"><li>Add Food</li></NavLink>
 
-                                    <NavLink to="/myFoodRequest"><li>MyFoodRequest</li></NavLink>
+                                   
 
                                     <NavLink to="/manageMyFood"><li>ManageMyFood</li></NavLink>
                                 </>
