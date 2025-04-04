@@ -49,15 +49,15 @@ const ShowCard = ({ food }) => {
                         alt="Food" />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
-                    <p>{location}</p>
+                    <h2 className="card-title text-purple-600">{name}</h2>
+                    <p className="">{location}</p>
                     <p>{quantity}</p>
                     <p>{time}</p>
                     <p>{status}</p>
                     <p>{notes}</p>
                     <div className="card-actions justify-end">
-                    <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-green-600">UpdateAction</button></Link>
-                    <button onClick={() => handleDelete(_id)} className="btn bg-red-600">Delete Button</button>
+                    <Link to={`/updateAction/${_id}`}><button onClick={handleUpdate} className="btn bg-purple-600">UpdateAction</button></Link>
+                    <button onClick={() => handleDelete(_id)} className="btn bg-rose-500">Delete Button</button>
                     </div>
                 </div>
             </div>

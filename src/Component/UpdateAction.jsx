@@ -48,19 +48,19 @@ const UpdateAction = () => {
             <div>
                 <h2>{name}</h2>
                 <div>
-                    <h2 className="text-4xl  script font-bold text-center my-6 text-orange-700">Manage My Food Form</h2>
-                    <form onSubmit={handleFoodCook} className="card-body w-10/12 mx-auto border bg-orange-200">
+                    <h2 className="text-4xl  script font-bold text-center my-6 text-rose-500">Manage My Food Form</h2>
+                    <form onSubmit={handleFoodCook} className="card-body w-10/12 mx-auto border bg-gradient-to-r from-purple-400 to-rose-300 purple-200">
                         {/* Food Name */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-xl font-bold text-lime-500">Food Name</span>
+                                <span className="label-text text-xl font-bold text-white">Food Name</span>
                             </label>
                             <input type="text" name="name" defaultValue={name}  placeholder="Food Name" className="input input-bordered" required />
                         </div>
                         {/* Food image */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-tex text-xl font-bold text-lime-500">Food Image</span>
+                                <span className="label-tex text-xl font-bold text-white">Food Image</span>
                             </label>
                             <input type="text" name="image" defaultValue={image}  placeholder="Food Image" className="input input-bordered" required />
 
@@ -68,14 +68,14 @@ const UpdateAction = () => {
                         {/* Food Location */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-tex text-xl font-bold text-lime-500">Food Location</span>
+                                <span className="label-tex text-xl font-bold text-white">Food Location</span>
                             </label>
                             <input type="text" name="location" defaultValue={location}  placeholder="Food Location" className="input input-bordered" required />
 
                         </div>
                         {/* Food Quantity */}
                         <label className="label">
-                            <span className="label-text text-xl font-bold text-lime-500">Food Quantity</span>
+                            <span className="label-text text-xl font-bold text-white">Food Quantity</span>
                         </label>
                         <select name="quantity" defaultValue={quantity} className="select select-bordered w-full my-6">
                             <option disabled selected>Food Quantity do you like?</option>
@@ -87,7 +87,7 @@ const UpdateAction = () => {
                         {/* Expired time & Date */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-tex text-xl font-bold text-lime-500">Expire Time & Date</span>
+                                <span className="label-tex text-xl font-bold text-white">Expire Time & Date</span>
                             </label>
                             <input type="number" name="time" defaultValue={time}  placeholder="Expired Time" className="input input-bordered" required />
 
@@ -95,7 +95,7 @@ const UpdateAction = () => {
 
                         {/*  Food status */}
                         <label className="label">
-                            <span className="label-text text-xl font-bold text-lime-500">Food Status</span>
+                            <span className="label-text text-xl font-bold text-white">Food Status</span>
                         </label>
                         <select name="status" defaultValue={status}  className="select select-bordered w-full my-6">
                             <option disabled selected>Food Status</option>
@@ -107,7 +107,7 @@ const UpdateAction = () => {
                         {/* Additional Notes */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-xl font-bold text-lime-500 mx-auto ">Additional Notes</span>
+                                <span className="label-text text-xl font-bold text-white mx-auto ">Additional Notes</span>
                             </label>
                             <input type="text" name="notes" defaultValue={notes} placeholder="Additional Notes" className="input input-bordered w-[640px] h-[200px] mx-auto" required />
 
@@ -115,7 +115,7 @@ const UpdateAction = () => {
 
                         <div className=" gap-4 form-control mt-6 w-[400px] mx-auto">
                             {/* <Link to={`updateAction${_id}`}><button className="btn bg-green-600">Update Button</button></Link> */}
-                            <button className="btn bg-green-600 my-6">Update</button>
+                            <button className="btn bg-gradient-to-r from-purple-500 to-rose-600 my-6">Update</button>
                         </div>
                       
                    

@@ -46,19 +46,19 @@ const AddFood = () => {
     
     return (
         <div>
-            <h2 className="text-4xl  script font-bold text-center my-6 text-orange-700">Add Food Form</h2>
-            <form  onSubmit={handleFoodCook}className="card-body w-10/12 mx-auto border bg-orange-200">
+            <h2 className="text-4xl  script font-bold text-center my-6 text-rose-500">Add Food Form</h2>
+            <form  onSubmit={handleFoodCook}className="card-body w-10/12 mx-auto border  bg-gradient-to-r from-purple-400 to-rose-300">
                 {/* Food Name */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-xl font-bold text-lime-500">Food Name</span>
+                        <span className="label-text text-xl font-bold text-white">Food Name</span>
                     </label>
                     <input type="text" name="name" placeholder="Food Name" className="input input-bordered" required />
                 </div>
                 {/* Food image */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-tex text-xl font-bold text-lime-500">Food Image</span>
+                        <span className="label-tex text-xl font-bold text-white">Food Image</span>
                     </label>
                     <input type="text" name="image" placeholder="Food Image" className="input input-bordered" required />
 
@@ -66,14 +66,14 @@ const AddFood = () => {
                 {/* Food Location */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-tex text-xl font-bold text-lime-500">Food Location</span>
+                        <span className="label-tex text-xl font-bold text-white">Food Location</span>
                     </label>
                     <input type="text" name="location" placeholder="Food Location" className="input input-bordered" required />
 
                 </div>
                 {/* Food Quantity */}
                 <label className="label">
-                    <span className="label-text text-xl font-bold text-lime-500">Food Quantity</span>
+                    <span className="label-text text-xl font-bold text-white">Food Quantity</span>
                 </label>
                 <select name="quantity" className="select select-bordered w-full my-6">
                     <option disabled selected>Food Quantity do you like?</option>
@@ -85,7 +85,7 @@ const AddFood = () => {
                 {/* Expired time & Date */}
                <div className="form-control">
                 <label className="label">
-                    <span className="label-tex text-xl font-bold text-lime-500">Expire Time & Date</span>
+                    <span className="label-tex text-xl font-bold text-white">Expire Time & Date</span>
                 </label>
                 <input type="number" name="time" placeholder="Expired Time" className="input input-bordered" required />
 
@@ -93,7 +93,7 @@ const AddFood = () => {
 
                 {/*  Food status */ }
                 <label className="label">
-                    <span className="label-text text-xl font-bold text-lime-500">Food Status</span>
+                    <span className="label-text text-xl font-bold text-white">Food Status</span>
                 </label>
                 <select  name ="status" className="select select-bordered w-full my-6">
                     <option disabled selected>Food Status</option>
@@ -105,18 +105,18 @@ const AddFood = () => {
     {/* Additional Notes */ }
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-xl font-bold text-lime-500 mx-auto ">Additional Notes</span>
+                        <span className="label-text text-xl font-bold text-white mx-auto ">Additional Notes</span>
                     </label>
                     <input type="text" name="notes" placeholder="Additional Notes" className="input input-bordered w-[640px] h-[200px] mx-auto" required />
 
                 </div>
 
                 <div className="form-control mt-6">
-                    <button className="btn bg-yellow-200">Add Button</button>
+                    <button className="btn  bg-gradient-to-r from-purple-500 to-rose-600">Add Button</button>
                 </div>
                <div className="border b-2 my-8"></div>
                 <div>
-                    <h2 className="text-center font-bold my-2 text-3xl">Donator logged in user</h2>
+                    <h2 className="text-center font-bold my-2 text-3xl text-rose-500">Donator logged in user</h2>
                     <form  onSubmit={handleFoodCook} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -139,7 +139,7 @@ const AddFood = () => {
 
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Click Here</button>
+                            <button className="btn  bg-gradient-to-r from-purple-500 to-rose-600">Click Here</button>
                         </div>
                     </form>
 

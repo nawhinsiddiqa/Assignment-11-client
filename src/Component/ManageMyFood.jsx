@@ -17,7 +17,7 @@ const ManageMyFood = () => {
  
   return (
     <div>
-      <h2 className="text-center my-5 text-3xl text-slate-600 font-bold script">Manage My Food Section</h2>
+      <h2 className="text-center my-5 text-4xl text-rose-500 font-bold script">Manage My Food Section</h2>
       <div className=" my-10 w-9/12 mx-auto gap-4 mb-6">
 
         {

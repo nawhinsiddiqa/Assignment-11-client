@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import { motion } from "motion/react"
 const Banner = () => {
     return (
@@ -15,7 +15,7 @@ const Banner = () => {
                         <p className="mb-5">
                           
                         </p>
-                        <button className="btn bg-gradient-to-r from-purple-500 to-rose-600">Let's see</button>
+                      <Link to="/avaliableFoodsPage">  <button className="btn bg-gradient-to-r from-purple-500 to-rose-600">Let's see</button></Link>
                     </div>
                 </div>
             </div>

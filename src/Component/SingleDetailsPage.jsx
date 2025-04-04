@@ -21,7 +21,7 @@ const SingleDetailsPage = () => {
 
     return (
         <div>
-            <h2 className="text-4xl text-center text-amber-600 script my-3">Details For Delicious Food Here</h2>
+            <h2 className="text-4xl text-center text-rose-500 script my-3">Details For Delicious Food Here</h2>
             <div>
                 <div className="card card-side bg-base-100 shadow-xl w-9/12 mx-auto my-10">
                     <figure>
@@ -30,7 +30,7 @@ const SingleDetailsPage = () => {
                             alt="food" />
                     </figure>
                     <div className="card-body">
-                        <h2 className="card-title text-green-800 border p-4 bg-gradient-to-r from-orange-400 to-rose-400">{name}</h2>
+                        <h2 className="card-title text-purple-800">{name}</h2>
                         <span className="font-bold"><p>Location:{location}</p></span>
                         <span className="font-bold"> <p>Expired:{time}</p></span>
                         <span className="font-bold"><p>Status:{status}</p></span>
@@ -86,7 +86,7 @@ const SingleDetailsPage = () => {
                                             </select>
                                             <textarea className="textarea textarea-ghost" placeholder="Notes"></textarea>
                                             <div className="form-control mt-6">
-                                                <button className="btn btn-primary">Submit Here</button>
+                                                <button className="btn bg-gradient-to-r from-purple-500 to-rose-600">Submit Here</button>
                                             </div>
                                         </form>
                                         {/* if there is a button in form, it will close the modal */}
@@ -104,7 +104,7 @@ const SingleDetailsPage = () => {
 
                            
 
-                            <button onClick={() => handleRequest()} className="btn bg-yellow-200">Request Button</button>
+                            <button onClick={() => handleRequest()} className="btn bg-gradient-to-r from-purple-500 to-rose-600">Request Button</button>
                             
                         </div>
                     </div>
